@@ -5,9 +5,9 @@ let currentQuestion = 0;
 let correctAnswers = 0;
 
 const numberOfHearts = 33; 
-const secondStepWords = ["Барабуля", "Моцарелла", "Любимка", "Валентинка"]; // Массив слов для второго шага
+const secondStepWords = ["Барабуля", "Моцарелла", "Любимка", "Валентинка"]; 
 
-const quizQuestions = [ // Массив вопросов для третьего шага
+const quizQuestions = [ 
     {
         question: "Какая твоя любимая еда?",
         options: ["Чипсы", "Сыр с плесенью", "Моцарелла", "Мармелад"],
@@ -25,7 +25,7 @@ const quizQuestions = [ // Массив вопросов для третьего
     }
 ];
 
-const valentinText = "Эта валентинка для моей Анютки любимки! /n Я тебя люблю! Спасибо, что рядом! Надеюсь у нас все будет только получаться дальше. Вместе! Твой Ромик"
+const valentinText = "Эта валентинка для моей Анютки любимки! Я тебя люблю! Спасибо, что рядом! Надеюсь у нас все будет только получаться дальше. Вместе! Твой Ромик"
 
 function startQuest() {
     document.getElementById('welcome-screen').classList.add('hidden');
@@ -45,7 +45,7 @@ function setupStage1() {
         heart.innerHTML = '❤️';
         heart.addEventListener('click', () => checkHeart(i, correctHeartIndex));
         
-        // Set random position
+     
         const left = Math.random() * 100;
         const top = Math.random() * 100;
         heart.style.left = `${left}%`;
@@ -75,7 +75,7 @@ function checkHeart(index, correctHeartIndex) {
         collectedLetters += secretCode[0];
         document.getElementById('key1').classList.add('found');
         
-        // Hide all other hearts
+      
         const hearts = document.querySelectorAll('#hearts-container .heart');
         hearts.forEach((heart, i) => {
             if (i !== index) {
